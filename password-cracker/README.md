@@ -12,6 +12,8 @@ Enter a hashed password and run it against a wordlist file (sample files include
 
 This was forked from [this repo](https://github.com/mayurkadampro/Python-Hash-Cracker). Long live open source :100:
 
+Example lists are from [SecLists](https://github.com/danielmiessler/SecLists).
+
 **TODO:**
 
 -   Create loop to go through each file in the `lists` folder automatically
