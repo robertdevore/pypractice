@@ -10,3 +10,5 @@ My focus will be on building scripts for pentesting/hacking/OSINT/etc.
 *   Key logger
 *   Nmap scanner
 *   Port scanner
+*   Subdomain scanner
+*   Password cracker
