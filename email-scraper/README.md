@@ -6,7 +6,7 @@ Enter a URL to scan and search for email addresses
 
 ### :computer: How to use
 
-`$ python3 email-scraper.py`
+`$ python3 EmailScraper.py`
 
 ### :pray: Thanks
 

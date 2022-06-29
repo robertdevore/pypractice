@@ -6,7 +6,7 @@ Enter an IP address to scan and find out information about specific ports
 
 ### :computer: How to use
 
-`$ python3 nmap-scanner.py`
+`$ python3 NmapScanner.py`
 
 ### :pray: Thanks
 
