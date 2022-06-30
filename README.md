@@ -12,3 +12,4 @@ My focus will be on building scripts for pentesting/hacking/OSINT/etc.
 *   Port scanner
 *   Subdomain scanner
 *   Password cracker
+*   Word scraper
