@@ -16,5 +16,4 @@ Example lists are from [SecLists](https://github.com/danielmiessler/SecLists).
 
 **TODO:**
 
--   Create loop to go through each file in the `lists` folder automatically
--   Create a way to loop through a list of usernames and hashed passwords to check multiple accounts at once (possibly a csv file?)
+[]   Create a way to loop through a list of usernames and hashed passwords to check multiple accounts at once (possibly a csv file?)
