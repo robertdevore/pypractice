@@ -1,4 +1,4 @@
-# :speaking_head_in_silhouette: Word Scraper
+# :speaking_head: Word Scraper
 
 Enter a domain name to receive a list of the most commonly used words on the page
 
