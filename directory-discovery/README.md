@@ -11,4 +11,4 @@ Enter a domain to scan for a list of common directory names.
 ### :pray: Thanks
 
 *   The `common.txt` file is courtesy of [wordlists.assetnote.io](https://wordlists.assetnote.io)
-*   The original code for this script was found at [Ethical-Hacking-Python-Scripts]
+*   The original code for this script was found at [Ethical-Hacking-Python-Scripts](https://github.com/SHathi28/Ethical-Hacking-Python-Scripts)
