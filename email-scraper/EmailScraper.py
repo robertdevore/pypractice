@@ -26,7 +26,7 @@ try:
 
         path = url[:url.rfind('/')+1] if '/' in parts.path else url
 
-        print("['{0}'] Processing '{1}'".format(count, url))
+        print("[{0}] Processing '{1}'".format(count, url))
 
         try:
             response = requests.get(url)
@@ -51,3 +51,5 @@ except KeyboardInterrupt:
 
 for mail in emails:
     print(mail)
+
+print("Process complete. Goodbye.")

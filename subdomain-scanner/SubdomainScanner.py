@@ -47,16 +47,16 @@ def main():
     for (key,value) in enumerate(req.json()):
         subdomains.append(value["name_value"])
 
-    print(f"\n[!] ****** TARGET: {target} ****** [!] \n")
+    print(f"\n[!] Target: {target}\n")
 
     subs = sorted(set(subdomains))
 
     for s in subs:
-        print(f"[*] {s}\n")
+        print(f"{s}\n")
         if output is not None:
             write_subs_to_file(s, output)
 
-    print("\n\n[**] Subdomain Scanner is complete, all subdomains have been found.")
+    print("\n\n[+] Subdomain Scanner is complete. All subdomains have been found.")
 
 if __name__ == "__main__":
     main()
