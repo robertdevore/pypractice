@@ -1,6 +1,6 @@
 # :mag_right: Banner grabber
 
-Enter a domain to scan for a list of common directory names.
+Enter an IP address and port number to receive additional data about the target.
 
 ![python](https://img.shields.io/badge/python-3.x-green.svg) ![license](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)
 
