@@ -1,4 +1,4 @@
-# :computer: Password cracker
+# :computer: Password cracker 2
 
 Enter a hashed password and run it against all of your wordlist `.txt` files in the current directly + all subdirectories
 
