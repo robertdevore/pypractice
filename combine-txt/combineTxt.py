@@ -13,7 +13,7 @@ def process_file(file_path, lines_list):
 
         # Loop through the file lines
         for line in file_lines:
-            print(line)
+            print(line.strip())
             # Add the line to the list
             lines_list.append(line)
 
