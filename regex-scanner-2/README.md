@@ -2,11 +2,23 @@
 
 Scans the current directory + sub-directories for a list of various regex expressions.
 
+![python](https://img.shields.io/badge/python-3.x-green.svg) ![license](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)
+
 File types included in the search:
 
-```
-".php", ".js", ".py", ".env", ".env.*", ".config", ".config.*", ".json", ".yaml", ".yml", ".ini", ".xml", ".txt"
-```
+* .php
+* .js
+* .py
+* .env
+* .env.*
+* .config
+* .config.*
+* .json
+* .yaml
+* .yml
+* .ini
+* .xml
+* .txt
 
 What's being searched for:
 
@@ -42,8 +54,6 @@ What's being searched for:
 * Twilio API Key
 * Twitter Access Token
 * Twitter OAuth
-
-![python](https://img.shields.io/badge/python-3.x-green.svg) ![license](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)
 
 ### :computer: How to use
 
