@@ -19,6 +19,7 @@ My focus will be on building scripts for pentesting/hacking/OSINT/etc.
 *   [Password Cracker 2](https://github.com/robertdevore/pypractice/tree/main/password-cracker-2)
 *   [Port scanner](https://github.com/robertdevore/pypractice/tree/main/port-scanner)
 *   [Regex Scanner](https://github.com/robertdevore/pypractice/tree/main/regex-scanner)
+*   [Regex Scanner 2](https://github.com/robertdevore/pypractice/tree/main/regex-scanner-2)
 *   [Subdomain scanner](https://github.com/robertdevore/pypractice/tree/main/subdomain-scanner)
 *   [supercli](https://github.com/robertdevore/pypractice/tree/main/supercli)
 *   [Word scraper](https://github.com/robertdevore/pypractice/tree/main/word-scraper)
