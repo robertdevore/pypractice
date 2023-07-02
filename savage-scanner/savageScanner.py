@@ -1,12 +1,14 @@
 import requests
 import time
 import argparse
+import warnings
+from urllib3.exceptions import InsecureRequestWarning
 from datetime import datetime
 from tqdm import tqdm
 
-def check_link(url):
+def check_link(url, verify_ssl=True):
     try:
-        response = requests.head(url, allow_redirects=True)
+        response = requests.head(url, allow_redirects=True, verify=verify_ssl)
         if response.status_code == 200:
             return True
     except requests.exceptions.RequestException:
@@ -24,7 +26,7 @@ def append_link_to_file(url, domain, current_time):
     with open(filename, "a") as file:
         file.write(url + "\n")
 
-def process_links(file_path, base_url, passive=False, delay=2):
+def process_links(file_path, base_url, passive=False, delay=2, verify_ssl=True):
     with open(file_path, "r") as file:
         lines = file.readlines()
 
@@ -39,9 +41,12 @@ def process_links(file_path, base_url, passive=False, delay=2):
         for line in lines:
             line = line.strip()
             if line:
-                url = base_url.rstrip("/") + "/" + line.lstrip("/")
-                if check_link(url):
-                    print(f"Valid URL: {url}")
+                if line.startswith("http://") or line.startswith("https://"):
+                    url = line
+                else:
+                    url = f"https://{domain}{line}"
+                if check_link(url, verify_ssl):
+                    #print(f"Valid URL: {url}")
                     append_link_to_file(url, domain, current_time)
                     counter += 1
                 if passive:
@@ -58,13 +63,18 @@ def process_links(file_path, base_url, passive=False, delay=2):
 # Example usage
 if __name__ == "__main__":
     print("Starting scanner...")
+
+    # Ignore InsecureRequestWarning
+    warnings.filterwarnings("ignore", category=InsecureRequestWarning)
+
     parser = argparse.ArgumentParser()
     parser.add_argument("file_path", help="Path to the input file")
     parser.add_argument("base_url", help="Base URL to append the lines")
     parser.add_argument("--passive", type=float, help="Enable passive mode with a specified delay in seconds")
+    parser.add_argument("--verifyssl", action="store_false", help="Disable SSL verification (not recommended in production)")
     args = parser.parse_args()
 
     if args.passive:
-        process_links(args.file_path, args.base_url, passive=True, delay=args.passive)
+        process_links(args.file_path, args.base_url, passive=True, delay=args.passive, verify_ssl=args.verifyssl)
     else:
-        process_links(args.file_path, args.base_url)
+        process_links(args.file_path, args.base_url, verify_ssl=args.verifyssl)
