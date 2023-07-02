@@ -6,7 +6,7 @@ Enter an XML file for a website and crawl every page looking for an XSS vulnerab
 
 ### :computer: How to use
 
-`$ python3 wpPass.py`
+`$ python3 xssYes.py`
 
 **TODO**
 
