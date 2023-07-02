@@ -27,3 +27,4 @@ My focus will be on building scripts for pentesting/hacking/OSINT/etc.
 *   [WP Pass](https://github.com/robertdevore/pypractice/tree/main/wp-pass)
 *   [XSS Yes](https://github.com/robertdevore/pypractice/tree/main/xss-yes)
 *   [XSS Yes 2](https://github.com/robertdevore/pypractice/tree/main/xss-yes-2)
+*   [Random scripts](https://github.com/robertdevore/pypractice/tree/main/random-scripts)
