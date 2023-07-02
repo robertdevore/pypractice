@@ -445,3 +445,4 @@ index.of.protected
 index.of.secure
 index.of.private
 "Index of /backup"
+intitle:"Index of /wp-content/uploads/logs/"
