@@ -117,7 +117,7 @@ def scan_directory(directory, current_file_path):
                             combined_line = ', '.join([f"{regex_key}" for regex_key, matched_text in matching_lines])
 
                             # Save the file path, line number, code, and combined line to the CSV file.
-                            writer.writerow([combined_line, line.strip(), file_path, i + 1])
+                            writer.writerow([combined_line, line.strip()[:100], file_path, i + 1])
                             counter += 1
             elif entry.is_dir():
                 # Recursively scan the subdirectory
@@ -135,3 +135,4 @@ time_elapsed = end_time - start_time
 
 print(f"Scan finished. Found {counter} errors and saved them to the {filename} file.")
 print(f"Time elapsed: {time_elapsed:.2f} seconds")
+
