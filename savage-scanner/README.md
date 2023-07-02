@@ -1,4 +1,4 @@
-# :mag_right: Savage Scanner
+# :smiling_imp: Savage Scanner
 
 Provide a wordlist to perform bruteforce recon on a domain in order to find vulnerable URL's
 
