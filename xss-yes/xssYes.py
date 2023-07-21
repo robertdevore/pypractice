@@ -16,13 +16,13 @@ def test_form_xss(form_url):
     data = {}
     for input in inputs:
         if 'name' in input.attrs:
-            data[input['name']] = '<script>alert("XSS")</script>'
+            data[input['name']] = '<sCrIpT>alert("XSS")</ScRiPt>'
 
     # Make a POST request to the form URL with the modified input field values
     response = requests.post(form_url, data=data)
 
     # Check if the XSS payload was executed in the response
-    if '<script>alert("XSS")</script>' in response.text:
+    if '<ScRiPt>alert("D3V1O")</sCrIpT>' in response.text:
         return True
     else:
         return False
