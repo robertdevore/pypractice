@@ -2,12 +2,15 @@ import requests
 import time
 import urllib3
 import sys
+import argparse
+import csv
+from datetime import datetime
+import os
 
 def parse_args():
-    import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("-d", "--domain", type = str, required = True, help = "Target Domain.")
-    parser.add_argument("-o", "--output", type = str, required = False, help = "Output to file.")
+    parser.add_argument("-d", "--domain", type=str, required=True, help="Target Domain.")
+    parser.add_argument("-o", "--output", type=str, required=False, help="Output to file.")
     return parser.parse_args()
 
 def banner():
@@ -25,10 +28,11 @@ def parse_url(url):
         sys.exit(1)
     return host
 
-def write_subs_to_file(subdomain, output_file):
-    with open(output_file, "a") as fp:
-        fp.write(subdomain + "\n")
-        fp.close()
+def write_subs_to_file(subdomains, output_file):
+    with open(output_file, "w", newline="") as csvfile:
+        csvwriter = csv.writer(csvfile)
+        for subdomain in subdomains:
+            csvwriter.writerow([subdomain])
 
 def main():
     banner()
@@ -44,17 +48,27 @@ def main():
         print("[X] Information not available!")
         sys.exit(1)
 
-    for (key,value) in enumerate(req.json()):
-        subdomains.append(value["name_value"])
+    for (key, value) in enumerate(req.json()):
+        subdomain = value["name_value"].strip()
+        if not (subdomain.startswith('"') and subdomain.endswith('"')):
+            subdomains.append(subdomain)
 
     print(f"\n[!] Target: {target}\n")
 
     subs = sorted(set(subdomains))
 
-    for s in subs:
-        print(f"{s}\n")
-        if output is not None:
-            write_subs_to_file(s, output)
+    if output is None:
+        for s in subs:
+            print(f"{s}\n")
+
+    if output is not None:
+        now = datetime.now()
+        date_time = now.strftime("%Y-%m-%d_%H-%M-%S")
+        filename = f"subdomain-scanner-{target}-{date_time}.csv"
+        current_directory = os.getcwd()
+        output_file_path = os.path.join(current_directory, filename)
+        write_subs_to_file(subs, output_file_path)
+        print(f"\n[+] Subdomains saved to: {output_file_path}")
 
     print("\n\n[+] Subdomain Scanner is complete. All subdomains have been found.")
 
