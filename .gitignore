@@ -5,3 +5,8 @@ password-cracker/lists/
 directory-discovery/discovered.txt
 dork-search/results.txt
 savage-scanner/wordlist.txt
+random-scripts/test.txt
+random-scripts/test2.txt
+random-scripts/test3.txt
+random-scripts/twelve_word_files.csv
+subdomain-scanner/scans/*
