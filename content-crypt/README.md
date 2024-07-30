@@ -1,4 +1,4 @@
-# :lock-with-key: Content Crypt
+# :lock: Content Crypt
 
 Encrypt and decrypt secret messages
 
