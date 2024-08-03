@@ -1,6 +1,6 @@
 # :lock: Content Crypt
 
-Encrypt and decrypt secret messages
+Encrypt and decrypt secret messages in the terminal
 
 ![python](https://img.shields.io/badge/python-3.x-green.svg) ![license](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)
 
@@ -10,13 +10,13 @@ Encrypt and decrypt secret messages
 
 `$ python3 contentCrypt.py`
 
-You'll be prompted to enter a password which is used to create the key used for the encryption
+You'll be prompted to enter a password. This will be used to create the key that is used for the encryption
 
 Then you'll be prompted to enter the message you'd like to encrypt.
 
 The secret message will be saved to a file named `encrypted.txt`
 
-**Deccrypt Message**
+**Decrypt Message**
 
 `$ python3 contentDecrypt.py encrypted.txt`
 
